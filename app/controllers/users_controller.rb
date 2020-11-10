@@ -16,8 +16,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    # user = User.find(params[:user_id])
-    @user.update(user_params)
+    user = User.find(params[:user_id])
+    user.update!(
+        username: params[:user][:username],
+        password: params[:user][:password]
+    )
+    redirect_to users_path
+  end
+
+  def destroy
+    user = User.find(params[:user_id])
+    User.destroy(params[:user_id])
     redirect_to users_path
   end
   
