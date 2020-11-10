@@ -15,7 +15,7 @@
   <tbody>
     <% @gyms.each do |gym| %>
       <tr>
-        <td><%= gym.name %></td>
+        <td><%= link_to gym.name %></td>
         <td><%= link_to 'Show', gym %></td>
         <td><%= link_to 'Edit', edit_gym_path(gym) %></td>
         <td><%= link_to 'Destroy', gym, method: :delete, data: { confirm: 'Are you sure?' } %></td>
