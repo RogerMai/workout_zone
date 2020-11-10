@@ -2,10 +2,14 @@ Rails.application.routes.draw do
 
   
   get 'users/new', to: 'users#new'
-  post 'users', to:'users#create', as: 'users'
   
   get 'workout_zone/about', to: 'workout_zone#about'
   get 'workout_zone/category', to: 'workout_zone#category'
+  get 'users', to: 'users#member'
+  get 'users/:user_id', to: 'users#show', as: "user"
+  post 'users', to:'users#create'
+  get '/users/:user_id/edit', to: 'users#edit', as: 'edit_user'
+  patch 'users/:user_id', to: 'users#update'
   
  
   root to: 'workout_zone#index'
