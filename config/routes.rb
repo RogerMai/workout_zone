@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
  
+  devise_for :users
   resources :gyms
   get 'workout_zone/about', to: 'workout_zone#about'
   get 'workout_zone/category', to: 'workout_zone#category'
